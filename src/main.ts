@@ -3,20 +3,20 @@ import { FONT_CONFIGS } from "./fonts";
 import "./style.css";
 
 class MonaspaceFonts {
-  async init(baseUrl: string) {
+  async init() {
     const fonts = acode.require("fonts");
 
     // ၁။ Register All Fonts
     for (const { name, url, weight, style } of FONT_CONFIGS) {
-      const absoluteUrl = `${baseUrl}${url}`;
       fonts.add(
         name,
-        `@font-face {\n  font-family: '${name}';\n  src: url('${absoluteUrl}') format('opentype');\n  font-weight: ${weight};\n  font-style: ${style};\n}`,
+        `@font-face {\n  font-family: '${name}';\n  src: url('${url}') format('opentype');\n  font-weight: ${weight};\n  font-style: ${style};\n}`,
       );
     }
 
     // ၂။ Add to SideBar App
     const sidebarApps = acode.require("sidebarApps");
+
     if (sidebarApps) {
       sidebarApps.add(
         "github",
@@ -53,17 +53,21 @@ class MonaspaceFonts {
       $item.className = "github-fonts-item";
 
       // Font Preview ပြသဖို့အတွက် fontFamily တစ်ခုပဲ JS ကနေ ထိန်းချုပ်ပါမယ်
-      $item.style.fontFamily = `'${font.name}', monospace`;
+      $item.style.fontFamily = `'${font.name}', monospace !important`;
       $item.innerText = font.name;
 
       $item.onclick = () => {
-        window.acode.alert(
-          font.name,
-          `Weight: ${font.weight}<br>Style: ${font.style}`,
-          () => {
-            console.log("Hello World");
-          },
-        );
+        if (window.acode.alert) {
+          window.acode.alert(
+            font.name,
+            `Font Weight - ${font.weight}
+            <br> Font Style - ${font.style}
+            `,
+            () => {
+              console.log(`${font.name}`);
+            },
+          );
+        }
       };
 
       $list.appendChild($item);
@@ -94,7 +98,7 @@ if (window.acode) {
     if (!baseUrl.endsWith("/")) {
       baseUrl += "/";
     }
-    await myPlugin.init(baseUrl);
+    await myPlugin.init();
   });
 
   acode.setPluginUnmount(PLUGIN_ID, () => {
