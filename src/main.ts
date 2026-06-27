@@ -192,7 +192,8 @@ class MonaspaceFonts {
       $text.className = "font-name-text-preview";
       $text.style.cssText = `
         font-size: 1rem; 
-        color: var(--text-color, #e6edf3); 
+        var(--primary-text-color, #0f172a) !important;
+        text-overflow: ellipsis;
         user-select: none;
         font-family: '${font.name}', monospace !important; 
         font-weight: ${font.weight} !important;

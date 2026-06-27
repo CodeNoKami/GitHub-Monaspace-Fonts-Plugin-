@@ -1,19 +1,20 @@
+/* Sidebar Container */
 .github-fonts-container {
   display: flex;
   flex-direction: column;
   height: 100%;
-  background-color: var(--secondary-bg-color, #1e1e24);
+  background-color: var(--primary-color, #1f2428);
+  color: var(--primary-text-color, #e6edf3);
   padding: 12px;
   box-sizing: border-box;
 }
 
-/* Slider Section UI Design */
+/* Slider Section */
 .font-size-slider-container {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  padding: 4px;
-  margin-bottom: 4px;
+  margin-bottom: 12px;
 }
 
 .slider-header {
@@ -25,131 +26,113 @@
 .slider-title {
   font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text-color, #ffffff);
+  color: var(--secondary-text-color);
+  opacity: 0.9;
 }
 
 .slider-value {
   font-size: 0.95rem;
   font-weight: bold;
-  color: var(--active-color, #2f81f7);
+  /* Slider တန်ဖိုးကို တောက်ပထင်ရှားစေရန် Button Background (သို့) Active Color သုံးခြင်း */
+  color: var(--button-background-color, #3399ff);
 }
 
-/* Modern Range Input Slider Customization */
 .font-size-range-input {
   -webkit-appearance: none;
-  width: 100%;
-  height: 6px;
-  border-radius: 4px;
-  background: var(--border-color, rgba(255, 255, 255, 0.15));
-  outline: none;
-  margin: 10px 0;
-}
-
-.font-size-range-input::-webkit-slider-thumb {
-  -webkit-appearance: none;
   appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--active-color, #2f81f7);
+  width: 100%;
   cursor: pointer;
-  transition: transform 0.1s ease;
+  outline: none;
+  overflow: hidden;
+  border-radius: 16px;
+  accent-color: var(--button-background-color, #3399ff);
 }
 
-.font-size-range-input::-webkit-slider-thumb:active {
-  transform: scale(1.2);
-}
-
+/* Divider Line */
 .sidebar-divider {
   height: 1px;
-  background-color: var(--border-color, rgba(255, 255, 255, 0.1));
-  margin: 14px 0;
+  background-color: var(--border-color, rgba(226, 232, 240, 0.8));
+  margin: 12px 0;
 }
 
+/* Titles */
 .github-fonts-title {
   font-size: 1.1rem;
+  margin: 0 0 12px 0;
   font-weight: 600;
-  color: var(--text-color, #ffffff);
-  margin-bottom: 14px;
-  padding-left: 6px;
-  border-left: 3px solid var(--active-color, #2f81f7);
+  color: var(--primary-text-color);
 }
 
+/* Scroll Box */
 .github-fonts-scroll {
   flex: 1;
   overflow-y: auto;
   overflow-x: auto;
 }
 
-.github-fonts-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-/* Modern Adaptive Card Layout */
+/* Font List Item Cards */
 .github-fonts-item-card {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 8px 12px;
-  background-color: var(--primary-bg-color, #25252d);
-  border-radius: 8px;
-  border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+  padding: 12px 14px;
+  margin-bottom: 8px;
+  border-radius: var(--popup-border-radius, 4px);
   cursor: pointer;
-  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.2s ease;
+
+  /* ကတ်တစ်ခုချင်းစီရဲ့ Background ကို Secondary Color ပေးပြီး Border ခတ်ခြင်း */
+  background-color: var(--secondary-color, #f8fafc);
+  border: 1px solid var(--border-color, #e2e800);
 }
 
-.github-fonts-item-card:active {
-  transform: scale(0.97);
-  opacity: 0.8;
+/* Hover State */
+.github-fonts-item-card:hover {
+  opacity: 0.85;
 }
 
-/* Active Highlight Border State */
-.item-active-state {
-  border-color: var(--active-color, #2f81f7) !important;
-  background-color: var(--active-bg-color, rgba(47, 129, 247, 0.1)) !important;
+/* Active State (လက်ရှိ ရွေးချယ်ထားသော Font Card) */
+.github-fonts-item-card.item-active-state {
+  background-color: var(--active-color, #3b82f6) !important;
+  border-color: var(--active-color, #3b82f6) !important;
 }
 
+/* Badges Layout */
 .modern-badge-container {
   display: flex;
   gap: 6px;
   align-items: center;
 }
 
-/* SVG Badge Containers */
+/* Icon Badges */
 .font-badge-icon-style {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 4px;
-  border-radius: 6px;
-  border: 1px solid transparent;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  padding: 3px;
+  box-sizing: border-box;
 }
 
 .badge-icon {
-  width: 15px;
-  height: 15px;
+  width: 100%;
+  height: 100%;
 }
 
-/* Theme Adaptive Icon Badges Colors */
+/* Badge Color (Theme Contrast ကို ထိန်းညှိရန်) */
 .app-badge {
-  background-color: rgba(35, 66, 111, 0.25);
-  color: var(--active-color, #58a6ff);
-  border-color: rgba(56, 139, 253, 0.25);
+  background-color: var(--primary-color, #1f2428) !important;
+  color: #3fb950 !important;
 }
 
 .editor-badge {
-  background-color: rgba(92, 78, 26, 0.25);
-  color: var(--accent-color, #f2cc60);
-  border-color: rgba(242, 204, 96, 0.25);
+  background-color: var(--primary-color, #1f2428) !important;
+  color: #d29922 !important;
 }
 
 .terminal-badge {
-  background-color: rgba(27, 78, 62, 0.25);
-  color: #3fb950;
-  border-color: rgba(63, 185, 80, 0.25);
+  background-color: var(--primary-color, #1f2428) !important;
+  color: #a78bfa !important;
 }
