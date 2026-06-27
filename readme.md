@@ -13,6 +13,7 @@ A premium, modern typographical extension for the Acode Mobile Editor. This plug
 - **Comprehensive Weight Ranges:** Native bundling of Regular (400), Medium (500), SemiBold (600), and Bold (700) weights per family.
 
 ![Font Preview](https://raw.githubusercontent.com/CodeNoKami/GitHub-Monaspace-Fonts-Plugin-/refs/heads/master/src/preview/font-preview.png)
+![Screenshot](https://raw.githubusercontent.com/CodeNoKami/GitHub-Monaspace-Fonts-Plugin-/refs/heads/master/src/preview/screenshot.png)
 
 ## 🙏 Acknowledgments & Credits
 

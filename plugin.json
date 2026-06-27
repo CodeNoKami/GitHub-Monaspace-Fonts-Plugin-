@@ -3,7 +3,7 @@
   "id": "lumen.github_monaspace_fonts",
   "name": "GitHub Monaspace Fonts",
   "main": "dist/main.js",
-  "version": "0.0.3",
+  "version": "1.0.1",
   "readme": "./readme.md",
   "repository": "",
   "icon": "icon.png",
